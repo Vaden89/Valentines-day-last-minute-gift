@@ -8,13 +8,7 @@ import {
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export const LoveText = () => {
-  const container = useRef<HTMLParagraphElement | null>(null);
   const [currentPoemIndex, setCurrentPoemIndex] = useState(0);
-
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start 0.9", "start 0.25"],
-  });
 
   const currentPoem = poems[currentPoemIndex];
   const words = currentPoem.content.split(" ");
@@ -28,7 +22,7 @@ export const LoveText = () => {
   };
 
   return (
-    <section className="pt-10 px-6">
+    <section id="poems-anchor" className="pt-10 px-6">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-6xl text-[#c8102e]" style={{ fontFamily: "Love" }}>
           POEMS
@@ -43,21 +37,9 @@ export const LoveText = () => {
         </div>
       </div>
 
-      <p ref={container} style={{ fontFamily: "Oswald" }} className="paragraph">
-        {words.map((word, i) => {
-          const start = i / words.length;
+      <PoemScroll key={currentPoemIndex} words={words} />
 
-          const end = start + 1 / words.length;
-
-          return (
-            <Word key={i} progress={scrollYProgress} range={[start, end]}>
-              {word}
-            </Word>
-          );
-        })}
-      </p>
-
-      <div className="flex justify-center gap-4 my-8">
+      <div className="flex justify-center gap-4 mb-8">
         <button
           onClick={handlePrevious}
           className="flex items-center gap-2 px-6 py-3 bg-[#c8102e] text-white rounded-full hover:bg-[#a00d24] transition-colors"
@@ -76,6 +58,34 @@ export const LoveText = () => {
         </button>
       </div>
     </section>
+  );
+};
+
+const PoemScroll = ({ words }: { words: string[] }) => {
+  const container = useRef<HTMLDivElement | null>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start start", "end end"],
+  });
+
+  return (
+    <div ref={container} style={{ height: `${words.length * 55}px` }}>
+      <div className="sticky top-0 pb-10">
+        <p style={{ fontFamily: "Oswald" }} className="paragraph">
+          {words.map((word, i) => {
+            const start = i / words.length;
+            const end = start + 1 / words.length;
+
+            return (
+              <Word key={i} progress={scrollYProgress} range={[start, end]}>
+                {word}
+              </Word>
+            );
+          })}
+        </p>
+      </div>
+    </div>
   );
 };
 

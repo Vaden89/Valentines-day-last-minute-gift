@@ -65,7 +65,7 @@ export const AudioNotes = () => {
     <section className="min-h-dvh pt-10 p-6 bg-gradient-to-br from-pink-50 via-red-50 to-pink-100">
       <div className="max-w-4xl mx-auto">
         <h2
-          className="text-6xl text-[#c8102e] mb-12 text-center"
+          className="text-6xl text-[#c8102e] mb-8 text-center"
           style={{ fontFamily: "Love" }}
         >
           Audio Notes
@@ -79,13 +79,13 @@ export const AudioNotes = () => {
             return (
               <div
                 key={note.id}
-                className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-pink-200"
+                className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-pink-200"
               >
                 <div className="flex items-center gap-4">
                   {/* Play/Pause Button */}
                   <button
                     onClick={() => handlePlayPause(note.id)}
-                    className="flex-shrink-0 w-14 h-14 rounded-full bg-gradient-to-br from-[#c8102e] to-[#9e0d24] text-white flex items-center justify-center hover:scale-110 transition-transform duration-200 shadow-md"
+                    className="shrink-0 w-14 h-14 rounded-full bg-gradient-to-br from-[#c8102e] to-[#9e0d24] text-white flex items-center justify-center hover:scale-110 transition-transform duration-200 shadow-md"
                     aria-label={isPlaying ? "Pause" : "Play"}
                   >
                     {isPlaying ? (
@@ -105,7 +105,6 @@ export const AudioNotes = () => {
                         {note.title}
                       </h3>
                       <div className="flex items-center gap-2 text-gray-500">
-                        <Volume2 className="w-4 h-4" />
                         <span className="text-sm">{note.duration}</span>
                       </div>
                     </div>
