@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "Love";
+  src: url("../assets/fonts/love.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: url("../assets/fonts/oswald.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
