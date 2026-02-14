@@ -1,5 +1,10 @@
 import { useRef, useState } from "react";
-import { useScroll, motion, MotionValue, useTransform } from "motion/react";
+import {
+  useScroll,
+  motion,
+  type MotionValue,
+  useTransform,
+} from "motion/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export const LoveText = () => {
