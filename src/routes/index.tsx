@@ -2,7 +2,7 @@ import { AudioNotes } from "@/components/AudioNotes";
 import { LoveText } from "@/components/LoveText";
 import { StackingHearts } from "@/components/StackingHearts";
 import { createFileRoute } from "@tanstack/react-router";
-import { ChevronUp } from "lucide-react";
+import { ChevronUp, Github } from "lucide-react";
 import { motion } from "motion/react";
 
 export const Route = createFileRoute("/")({ component: App });
@@ -10,7 +10,11 @@ export const Route = createFileRoute("/")({ component: App });
 function App() {
   return (
     <main className="w-full min-h-screen">
-      <section>
+      <section className="relative">
+        <a href="https://github.com" className="absolute z-10 right-6 top-4">
+          <Github color="white" fill="white" />
+        </a>
+
         <div className="w-full h-dvh flex flex-col justify-center items-center bg-[#c8102e]  px-6 relative text-center">
           <motion.span
             initial={{ opacity: 0 }}

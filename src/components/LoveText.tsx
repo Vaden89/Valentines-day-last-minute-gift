@@ -70,8 +70,8 @@ const PoemScroll = ({ words }: { words: string[] }) => {
   });
 
   return (
-    <div ref={container} style={{ height: `${words.length * 55}px` }}>
-      <div className="sticky top-0 pb-10">
+    <div>
+      <div ref={container} className="pb-10">
         <p style={{ fontFamily: "Oswald" }} className="paragraph">
           {words.map((word, i) => {
             const start = i / words.length;
