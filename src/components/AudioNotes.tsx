@@ -57,7 +57,7 @@ export const AudioNotes = () => {
   }, []);
 
   return (
-    <section className="min-h-dvh pt-10 p-6 bg-gradient-to-br from-pink-50 via-red-50 to-pink-100">
+    <section className=" pt-10 p-6 bg-gradient-to-br from-pink-50 via-red-50 to-pink-100">
       <div className="max-w-4xl mx-auto">
         <h2
           className="text-6xl text-[#c8102e] mb-8 text-center"
