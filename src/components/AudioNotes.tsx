@@ -10,12 +10,7 @@ interface AudioNote {
 
 // Define your audio notes here - user will add mp3 files to public folder
 const audioNotes: AudioNote[] = [
-  { id: "1", title: "VOICE LOG 1", filename: "day-1.mp3", duration: "1:02" },
-  { id: "2", title: "VOICE LOG 2", filename: "day-2.mp3", duration: "1:10" },
-  { id: "3", title: "VOICE LOG 3", filename: "day-3.mp3", duration: "1:00" },
-  { id: "4", title: "VOICE LOG 4", filename: "day-4.mp3", duration: "1:41" },
-  { id: "5", title: "VOICE LOG 5", filename: "day-5.mp3", duration: "0:40" },
-  { id: "6", title: "VOICE LOG 6", filename: "day-6.mp3", duration: "0:40" },
+  { id: "1", title: "VOICE LOG 1", filename: "test.mp3", duration: "1:02" },
 ];
 
 export const AudioNotes = () => {
